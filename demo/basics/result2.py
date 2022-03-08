@@ -7,3 +7,4 @@ if maths > 50 and eng > 50:
 else:
     print("Failed")
 
+result = "Passed" if maths > 50 else "Failed"
