@@ -1,4 +1,3 @@
-
 def has_upper(s):
     for c in s:
         if c.isupper():
@@ -19,7 +18,7 @@ def count_upper(s):
     count = 0
     for c in s:
         if c.isupper():
-           count +=1
+            count += 1
 
     return count
 
@@ -28,4 +27,3 @@ def count_upper(s):
 if __name__ == '__main__':
     print(count_upper("Abc"))
     print(has_digit("233"))
-
