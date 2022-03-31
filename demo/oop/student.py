@@ -1,4 +1,14 @@
 class Student:
+    courses = {"java": 15000, "python": 10000, ".net": 12500, "ds": 20000}
+
+    @staticmethod
+    def getcourses():
+        return Student.courses
+
+    @staticmethod
+    def getcoursefee(course):
+        return Student.courses[course]
+
     def __init__(self, rollno, name, course='python'):
         self.rollno = rollno
         self.name = name
@@ -8,12 +18,21 @@ class Student:
     def pay(self, amount):
         self.feepaid += amount
 
-    def getdue(self):
-        totalfee = 15000 if self.course == 'java' else 10000
-        return totalfee - self.feepaid
+    def gettotalfee(self):
+        return Student.courses[self.course]
 
+    def getdue(self):
+        return self.gettotalfee() - self.feepaid
+
+    @property
+    def totalfee(self):
+        return Student.courses[self.course]
+
+
+print(Student.getcoursefee(".net"))
 
 s1 = Student(1, "Jack")
+print(s1.totalfee)   # Access property
 s2 = Student(2, "Bob", "java")
 
 s1.pay(5000)

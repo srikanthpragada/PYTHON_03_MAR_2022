@@ -1,7 +1,13 @@
 class Account:
+    # Static attribute or class attribute
+    minbal = 10000
+    @staticmethod      # Decorator
+    def getminbal():
+        return Account.minbal
+
     # constructor
     def __init__(self, acno, ahname, balance=0):
-        # Attributes
+        # Object Attributes
         self.acno = acno
         self.ahname = ahname
         # private attribute
@@ -19,6 +25,8 @@ class Account:
         print("Ahname   : ", self.ahname)
         print("Balance  : ", self.__balance)
 
+
+print(Account.getminbal())
 
 a1 = Account(1, "Scott")  # Create an object/instance
 a1.deposit(10000)
