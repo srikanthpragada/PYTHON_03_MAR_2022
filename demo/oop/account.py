@@ -17,6 +17,12 @@ class Account:
     def deposit(self, amount):
         self.__balance += amount
 
+    def withdraw(self, amount):
+        if self.__balance < amount:
+            raise ValueError("Insufficient Balance")
+
+        self.__balance -= amount
+
     def getbalance(self):
         return self.__balance
 
@@ -31,6 +37,7 @@ print(Account.getminbal())
 a1 = Account(1, "Scott")  # Create an object/instance
 a1.deposit(10000)
 a1.deposit(20000)
+a1.withdraw(100000)
 print(a1.__dict__)
 # print(a1._Account__balance)
 

@@ -1,3 +1,7 @@
+class StackEmptyError(Exception):
+    def __str__(self):
+        return "Stack is empty"
+
 class Stack:
     def __init__(self):
         self.data = []
@@ -6,6 +10,9 @@ class Stack:
         self.data.append(value)
 
     def pop(self):
+        if len(self.data) == 0:
+            raise StackEmptyError()
+
         return self.data.pop()
 
     def peek(self):
