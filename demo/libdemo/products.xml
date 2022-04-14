@@ -1,0 +1,14 @@
+<products>
+    <product>
+        <name>First Product</name>
+        <price>93993</price>
+    </product>
+    <product>
+        <name>Second Product</name>
+        <price>12345</price>
+    </product>
+    <product>
+        <name>Third Product</name>
+        <price>94845</price>
+    </product>
+</products>
