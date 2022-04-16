@@ -15,14 +15,14 @@ for line in f.readlines():
         id, salary = parts
         cur.execute("update employees set salary = ? where id = ?", (salary, id))
         if cur.rowcount == 1:
-            # print(f"Updated Employee {id} Successfully!")
+            print(f"Updated Employee {id} Successfully!")
             updated += 1
         else:
-            # print(f"Employee {id} not found!")
+            print(f"Employee {id} not found!")
             notfound += 1
     except Exception as ex:
         error += 1
-        # print(f"Error while updating employee {id} -> {ex}")
+        print(f"Error while updating employee {id} -> {ex}")
 
 
 con.commit()
